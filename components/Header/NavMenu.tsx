@@ -10,8 +10,8 @@ export default function NavMenu() {
           </a>
         </li>
 
-        <li className="nav__menu__list__item">
-          <a href="" className="nav__menu__list__item__link">
+        <li className="nav__menu__list__item  active-link">
+          <a href="" className="nav__menu__list__item__link ">
             REWARDS
           </a>
         </li>

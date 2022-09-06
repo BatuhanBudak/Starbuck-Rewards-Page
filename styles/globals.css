@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap");
 html {
-  font-size: 85%;
+  font-size: 80%;
 }
 html,
 body {
@@ -85,7 +85,7 @@ html:focus-within {
   --fs-button: var(--fs-200);
   --fs-button-link: var(--fs-200);
   --fs-text-link: clamp(var(--fs-200), 1.125rem, var(--fs-225));
-  --fs-nav-link-mobile: var(--fs-290);
+  --fs-nav-link-mobile: var(--fs-240);
   --fs-nav-link-desktop: clamp(var(--fs-230), 1.35rem, var(--fs-240));
 
   --fs-footer-heading: var(--fs-desc-heading);
@@ -279,7 +279,7 @@ body.nav-open {
   visibility: hidden;
   transition: opacity 250ms ease-out, visibility 0s linear 250ms;
   will-change: opacity;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 @supports (
   (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))

@@ -1,251 +1,111 @@
-import useToggle from "../../hooks/useToggle";
-import { ArrowTopRight } from "../Icon";
+import { MapMarker } from "../Icon";
 
-export default function NavDrawer({ drawerOpen }) {
-  const [productToggled, toggleProduct, closeProductList] = useToggle();
-  const [learnToggled, toggleLearn, closeLearnList] = useToggle();
-  const [supportToggled, toggleSupport, closeSupportList] = useToggle();
-
-  function closeAllSubLists() {
-    closeProductList();
-    closeLearnList();
-    closeSupportList();
-  }
-
+export default function NavDrawer({
+  firstDrawerOpen,
+  drawerTransitioning,
+  secondDrawerOpen,
+  toggleSecondDrawer,
+  secondDrawerTransitioning,
+  toggleSecondDrawerTransition,
+}) {
   return (
-    <div
-      className="nav__drawer"
-      id="nav-drawer"
-      role="dialog"
-      aria-modal={true}
-      tabIndex={drawerOpen ? -1 : 0}
-    >
-      <ul className="nav__drawer__list" id="mobile-nav">
-        <li className="nav__drawer__list__item">
-          <button
-            className={`nav__drawer__list__item__btn  has-arrow ${
-              productToggled ? "rotate" : ""
-            }`}
-            aria-controls={"product-list"}
-            aria-expanded={productToggled}
-            id="accordion-item-1"
-            onClick={() => {
-              closeAllSubLists();
-              toggleProduct();
-            }}
-          >
-            Product
-          </button>
-          {productToggled && (
-            <ul
-              className="nav__drawer__list__item__sub-list"
-              id="product-list"
-              aria-labelledby="accordion-item-1"
-              role="region"
-              aria-hidden={!productToggled}
+    <div>
+      <div
+        className={`${drawerTransitioning ? "in-transition" : ""} nav__drawer`}
+        role="dialog"
+        aria-modal={true}
+        tabIndex={firstDrawerOpen && !secondDrawerOpen ? 0 : -1}
+      >
+        <ul
+          className="nav__drawer__list"
+          id="mobile-nav-primary"
+          aria-label="mobile-nav-primary"
+        >
+          <li className="nav__drawer__list__item">
+            <button
+              className="nav__drawer__list__item__btn  has-arrow"
+              aria-controls="mobile-nav-secondary"
+              aria-expanded={secondDrawerOpen}
+              onClick={() => {
+                toggleSecondDrawer();
+                toggleSecondDrawerTransition();
+              }}
             >
-              <li className="nav__drawer__list__item__sub-list__item">
-                <a
-                  href=""
-                  className="nav__drawer__list__item__sub-list__item__link"
-                >
-                  Design
-                </a>
-              </li>
-              <li className="nav__drawer__list__item__sub-list__item">
-                <a
-                  href=""
-                  className="nav__drawer__list__item__sub-list__item__link"
-                >
-                  Collaborate
-                </a>
-              </li>
-              <li className="nav__drawer__list__item__sub-list__item">
-                <a
-                  href=""
-                  className="nav__drawer__list__item__sub-list__item__link"
-                >
-                  Prototype
-                </a>
-              </li>
-              <li className="nav__drawer__list__item__sub-list__item">
-                <a
-                  href=""
-                  className="nav__drawer__list__item__sub-list__item__link"
-                >
-                  Developer Handoff
-                </a>
-              </li>
-              <li className="nav__drawer__list__item__sub-list__item">
-                <a
-                  href=""
-                  className="nav__drawer__list__item__sub-list__item__link"
-                >
-                  Workspaces
-                </a>
-              </li>
-              <li className="nav__drawer__list__item__sub-list__item">
-                <a
-                  href=""
-                  className="nav__drawer__list__item__sub-list__item__link"
-                >
-                  Extensions
-                </a>
-              </li>
-              <li className="nav__drawer__list__item__sub-list__item">
-                <a
-                  href=""
-                  className="nav__drawer__list__item__sub-list__item__link"
-                >
-                  Updates
-                </a>
-              </li>
-            </ul>
-          )}
-        </li>
-        <li className="nav__drawer__list__item">
-          <button
-            className={`nav__drawer__list__item__btn  has-arrow ${
-              learnToggled ? "rotate" : ""
-            }`}
-            onClick={() => {
-              closeAllSubLists();
-              toggleLearn();
-            }}
-            aria-controls={"learn-list"}
-            aria-expanded={learnToggled}
-            id="accordion-item-2"
-          >
-            Learn
-          </button>
-          {learnToggled && (
-            <ul
-              className="nav__drawer__list__item__sub-list"
-              id="learn-list"
-              aria-labelledby="accordion-item-2"
-              role="region"
-              aria-hidden={!learnToggled}
-            >
-              <li className="nav__drawer__list__item__sub-list__item">
-                <a
-                  href=""
-                  className="nav__drawer__list__item__sub-list__item__link"
-                >
-                  Blog
-                </a>
-              </li>
-              <li className="nav__drawer__list__item__sub-list__item">
-                <a
-                  href=""
-                  className="nav__drawer__list__item__sub-list__item__link"
-                >
-                  Course: Sketch 101
-                  <span className="new-label">NEW</span>
-                </a>
-              </li>
-              <li className="nav__drawer__list__item__sub-list__item">
-                <a
-                  href=""
-                  className="nav__drawer__list__item__sub-list__item__link"
-                >
-                  Documentation
-                </a>
-              </li>
-              <li className="nav__drawer__list__item__sub-list__item">
-                <a
-                  href=""
-                  className="nav__drawer__list__item__sub-list__item__link"
-                >
-                  Events {"&"}Meetups
-                  <span className="event-label">1</span>
-                </a>
-              </li>
-              <li className="nav__drawer__list__item__sub-list__item">
-                <a
-                  href=""
-                  className="nav__drawer__list__item__sub-list__item__link"
-                >
-                  Newsletter
-                </a>
-              </li>
-              <li className="nav__drawer__list__item__sub-list__item">
-                <a
-                  href=""
-                  className="nav__drawer__list__item__sub-list__item__link"
-                >
-                  Research Labs
-                </a>
-              </li>
-            </ul>
-          )}
-        </li>
-        <li className="nav__drawer__list__item">
-          <a className="nav__drawer__list__item__link" href="">
-            Apps
+              Menu
+            </button>
+          </li>
+          <li className="nav__drawer__list__item">
+            <a className="nav__drawer__list__item__link" href="">
+              Rewards
+            </a>
+          </li>
+          <li className="nav__drawer__list__item">
+            <a className="nav__drawer__list__item__link" href="">
+              Gift Cards
+            </a>
+          </li>
+        </ul>
+        <hr className="nav__drawer__seperator" />
+        <div className="nav__drawer__auth">
+          <div className="nav__drawer__auth__button-container">
+            <a className="nav__drawer__auth__link button" href="">
+              Sign in
+            </a>
+            <a className="nav__drawer__auth__link button button--white" href="">
+              Join now
+            </a>
+          </div>
+          <a className="nav__drawer__auth__link" href="">
+            <MapMarker />
+            Find a store
           </a>
-        </li>
-        <li className="nav__drawer__list__item">
-          <a className="nav__drawer__list__item__link" href="">
-            Pricing
-          </a>
-        </li>
-        <li className="nav__drawer__list__item">
-          <button
-            className={`nav__drawer__list__item__btn  has-arrow ${
-              supportToggled ? "rotate" : ""
-            }`}
-            onClick={() => {
-              closeAllSubLists();
-              toggleSupport();
-            }}
-            aria-controls="support-list"
-            aria-expanded={supportToggled}
-            id="accordion-item-3"
-          >
-            Support
-          </button>
-          {supportToggled && (
-            <ul
-              className="nav__drawer__list__item__sub-list"
-              id="support-list"
-              aria-labelledby="accordion-item-3"
-              role="region"
-              aria-hidden={!productToggled}
-            >
-              <li className="nav__drawer__list__item__sub-list__item">
-                <a
-                  href=""
-                  className="nav__drawer__list__item__sub-list__item__link"
-                >
-                  Sketch Help
-                  <ArrowTopRight />
-                </a>
-              </li>
-              <li className="nav__drawer__list__item__sub-list__item">
-                <a
-                  href=""
-                  className="nav__drawer__list__item__sub-list__item__link"
-                >
-                  Contact Us
-                </a>
-              </li>
-              <li className="nav__drawer__list__item__sub-list__item">
-                <a
-                  href=""
-                  className="nav__drawer__list__item__sub-list__item__link has-arrow"
-                >
-                  Service Status
-                  <ArrowTopRight />
-                </a>
-              </li>
-            </ul>
-          )}
-        </li>
-      </ul>
-      <div className="nav__drawer__link__container">
-        <a className="nav__drawer__link button" href="">
-          Get started for free
-        </a>
+        </div>
+      </div>
+      <div
+        className={`${
+          secondDrawerTransitioning ? "in-transition" : ""
+        } nav__drawer-second ${secondDrawerOpen ? "second-drawer-open" : ""}`}
+        role="dialog"
+        aria-modal={true}
+        tabIndex={!firstDrawerOpen && secondDrawerOpen ? 0 : -1}
+      >
+        <button
+          className="nav__drawer-second__list__item__btn  has-arrow has-arrow--left"
+          aria-controls="mobile-nav-secondary"
+          aria-expanded={secondDrawerOpen}
+          onClick={() => {
+            toggleSecondDrawer();
+            toggleSecondDrawerTransition();
+          }}
+        >
+          Menu
+        </button>
+        <ul
+          className="nav__drawer__list nav__drawer__list--second"
+          aria-label="mobile-nav-secondary"
+          id="mobile-nav-secondary"
+        >
+          <li className="nav__drawer__list__item">
+            <a className="nav__drawer__list__item__link" href="">
+              All products
+            </a>
+          </li>
+          <li className="nav__drawer__list__item">
+            <a className="nav__drawer__list__item__link" href="">
+              Featured
+            </a>
+          </li>
+          <li className="nav__drawer__list__item">
+            <a className="nav__drawer__list__item__link" href="">
+              Previous
+            </a>
+          </li>
+          <li className="nav__drawer__list__item">
+            <a className="nav__drawer__list__item__link" href="">
+              Favorites
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   );
