@@ -1,0 +1,22 @@
+.banner {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  box-shadow: 0 4px 4px 0 rgb(0 0 0 / 12%), 0 0 2px 0 rgb(0 0 0 / 24%);
+  height: 50px;
+  background-color: var(--clr-bg-dark-green);
+}
+.banner .container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.banner__header {
+  text-transform: uppercase;
+  font-size: var(--fs-logo-heading);
+  color: var(--clr-white);
+  letter-spacing: 0.1em;
+  font-weight: var(--fw-bold);
+}

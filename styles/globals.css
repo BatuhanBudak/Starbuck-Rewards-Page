@@ -71,17 +71,17 @@ html:focus-within {
   --fs-550: 4.75rem;
   --fs-600: 5rem;
 
-  --fs-body: clamp(var(--fs-150), 0.9375rem, var(--fs-200));
+  --fs-body: clamp(var(--fs-175), var(--fs-218), var(--fs-240));
   --fs-primary-heading: clamp(var(--fs-700), 6vw, var(--fs-950));
   --fs-heading-excerpt: clamp(var(--fs-500), 1.35rem, var(--fs-600));
 
-  --fs-hero-heading: clamp(var(--fs-380), 3.2rem, var(--fs-460));
-  --fs-logo-heading: clamp(var(--fs-230), 1.35rem, var(--fs-240));
-  --fs-secondary-heading: clamp(var(--fs-340), 2.6rem, var(--fs-380));
+  --fs-hero-heading: clamp(var(--fs-300), var(--fs-340), var(--fs-380));
+  --fs-logo-heading: clamp(var(--fs-200), 1.15rem, var(--fs-230));
+  --fs-secondary-heading: clamp(var(--fs-230), var(--fs-290), var(--fs-325));
   --fs-tab-heading: clamp(var(--fs-290), 2.2rem, var(--fs-340));
-  --fs-desc-heading: clamp(var(--fs-260), 1.65rem, var(--fs-290));
+  --fs-desc-heading: clamp(var(--fs-175), var(--fs-230), var(--fs-250));
   --fs-cost-heading: clamp(var(--fs-218), 1.375rem, var(--fs-250));
-  --fs-hero-body: clamp(var(--fs-200), 1.125rem, var(--fs-225));
+  --fs-hero-body: clamp(var(--fs-225), 1.3rem, var(--fs-250));
   --fs-button: var(--fs-200);
   --fs-button-link: var(--fs-200);
   --fs-text-link: clamp(var(--fs-200), 1.125rem, var(--fs-225));
@@ -106,6 +106,7 @@ html:focus-within {
   --size-650: 2.5rem;
   --size-675: 2.75rem;
   --size-700: 3rem;
+  --size-725: 3.2rem;
   --size-750: 3.5rem;
   --size-800: 4rem;
   --size-900: 5rem;
@@ -113,7 +114,27 @@ html:focus-within {
 
   --icon-size-default: 1.25rem;
   --icon-size-lg: 1.5rem;
+
   --max-width: 90rem;
+  --padding-inline: var(--size-540);
+  --padding-block: var(--size-725);
+}
+
+@media screen and (min-width: 48em) {
+  :root {
+    --padding-inline: var(--size-640);
+  }
+}
+@media screen and (min-width: 64em) {
+  :root {
+    --padding-inline: var(--size-800);
+  }
+}
+
+@media screen and (min-width: 95em) {
+  :root {
+    --padding-inline: 0;
+  }
 }
 
 *,
@@ -218,6 +239,15 @@ body {
   background-color: hsl(0, 0%, 0%);
   color: #fff;
 }
+.button.button--green {
+  background-color: var(--clr-bg-dark-green);
+  color: var(--clr-white);
+}
+
+.button.button--light-green {
+  background-color: var(--clr-accent);
+  color: var(--clr-white);
+}
 
 .visuallyhidden {
   border: 0;
@@ -231,29 +261,44 @@ body {
   white-space: nowrap;
 }
 .container {
-  --padding: var(--size-540);
+  --padding-inline: var(--size-540);
 
-  padding-inline: var(--padding);
+  padding-inline: var(--padding-inline);
 }
 
 @media screen and (min-width: 48em) {
   .container {
-    --padding: var(--size-640);
+    --padding-inline: var(--size-640);
   }
 }
 @media screen and (min-width: 64em) {
   .container {
-    --padding: var(--size-800);
+    --padding-inline: var(--size-800);
   }
 }
 @media screen and (min-width: 95em) {
   .container {
-    --padding: 0;
+    --padding-inline: 0;
     max-width: var(--max-width);
     margin-inline: auto;
   }
 }
+.section {
+  --margin--bottom: 72px;
 
+  margin-bottom: var(--margin--bottom);
+}
+
+@media screen and (min-width: 48em) {
+  .section {
+    --margin--bottom: 128px;
+  }
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
 .icon {
   display: inline-block;
   width: var(--icon-size-lg);
@@ -271,7 +316,7 @@ body.nav-open {
   z-index: 4;
   width: 100%;
   height: 100vh;
-  inset: 0;
+  inset: 72px 0 0 0;
   padding: 0;
   overflow-y: scroll;
   opacity: 0;
@@ -279,17 +324,9 @@ body.nav-open {
   visibility: hidden;
   transition: opacity 250ms ease-out, visibility 0s linear 250ms;
   will-change: opacity;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.38);
 }
-@supports (
-  (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))
-) {
-  .page-overlay {
-    background-color: rgba(255, 255, 255, 0.55);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-  }
-}
+
 .nav-open .page-overlay {
   opacity: 1;
   visibility: visible;

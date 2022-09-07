@@ -12,19 +12,16 @@ export default function NavDrawer({
     <div>
       <div
         className={`${drawerTransitioning ? "in-transition" : ""} nav__drawer`}
-        role="dialog"
-        aria-modal={true}
+        aria-hidden={!firstDrawerOpen || secondDrawerOpen}
         tabIndex={firstDrawerOpen && !secondDrawerOpen ? 0 : -1}
+        role="menu"
       >
-        <ul
-          className="nav__drawer__list"
-          id="mobile-nav-primary"
-          aria-label="mobile-nav-primary"
-        >
+        <ul className="nav__drawer__list" id="mobile-nav-primary">
           <li className="nav__drawer__list__item">
             <button
               className="nav__drawer__list__item__btn  has-arrow"
               aria-controls="mobile-nav-secondary"
+              aria-haspopup="menu"
               aria-expanded={secondDrawerOpen}
               onClick={() => {
                 toggleSecondDrawer();
@@ -65,14 +62,15 @@ export default function NavDrawer({
         className={`${
           secondDrawerTransitioning ? "in-transition" : ""
         } nav__drawer-second ${secondDrawerOpen ? "second-drawer-open" : ""}`}
-        role="dialog"
-        aria-modal={true}
-        tabIndex={!firstDrawerOpen && secondDrawerOpen ? 0 : -1}
+        role="menu"
+        aria-hidden={!secondDrawerOpen}
+        tabIndex={secondDrawerOpen ? 0 : -1}
       >
         <button
           className="nav__drawer-second__list__item__btn  has-arrow has-arrow--left"
           aria-controls="mobile-nav-secondary"
           aria-expanded={secondDrawerOpen}
+          aria-label="Close seconday navigation"
           onClick={() => {
             toggleSecondDrawer();
             toggleSecondDrawerTransition();
@@ -82,7 +80,6 @@ export default function NavDrawer({
         </button>
         <ul
           className="nav__drawer__list nav__drawer__list--second"
-          aria-label="mobile-nav-secondary"
           id="mobile-nav-secondary"
         >
           <li className="nav__drawer__list__item">

@@ -18,7 +18,8 @@ export default function NavFirst({
         type="button"
         className="nav__toggle"
         aria-expanded={firstDrawerOpen}
-        aria-haspopup="dialog"
+        aria-controls="mobile-nav-primary"
+        aria-haspopup="menu"
         onClick={() => {
           if (firstDrawerOpen && secondDrawerOpen) {
             toggleFirstDrawer();

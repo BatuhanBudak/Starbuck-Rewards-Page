@@ -14,12 +14,12 @@ export default function Header() {
     useTransition();
 
   useEffect(() => {
-    if (firstDrawerOpen) {
+    if (firstDrawerOpen || secondDrawerOpen) {
       document.body.classList.add("nav-open");
-    } else {
+    } else if (!firstDrawerOpen && !secondDrawerOpen) {
       document.body.classList.remove("nav-open");
     }
-  }, [firstDrawerOpen]);
+  }, [firstDrawerOpen, secondDrawerOpen]);
 
   return (
     <header>
