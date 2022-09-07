@@ -3,6 +3,7 @@ import "../styles/header.css";
 import "../styles/banner.css";
 import "../styles/hero.css";
 import "../styles/intro.css";
+import "../styles/tabs.css";
 
 import type { AppProps } from "next/app";
 
