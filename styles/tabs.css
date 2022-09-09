@@ -27,10 +27,12 @@
 }
 .react-tabs__tab {
   background: transparent;
+  cursor: pointer;
   border: 0;
   border-radius: 0;
-  padding: var(--size-350) var(--size-350) var(--size-350) var(--size-540);
+  padding: var(--size-350) var(--size-350) var(--size-540) var(--size-350);
   display: flex;
+  justify-content: center;
   align-items: center;
   position: relative;
   flex-grow: 1;
@@ -92,6 +94,7 @@
 .tabs__tabContent__img__padding {
   width: 100%;
   padding-bottom: 56.14%;
+  aspect-ratio: 16/9;
 }
 .absoluteSpread {
   inset: 0;

@@ -4,6 +4,9 @@ import "../styles/banner.css";
 import "../styles/hero.css";
 import "../styles/intro.css";
 import "../styles/tabs.css";
+import "../styles/extras.css";
+import "../styles/payment.css";
+import "../styles/stars.css";
 
 import type { AppProps } from "next/app";
 
