@@ -1,0 +1,15 @@
+.questions__title {
+  font-size: var(--fs-secondary-heading);
+  font-weight: var(--fw-semi-bold);
+  margin-bottom: var(--size-540);
+}
+.questions__body__link {
+  color: var(--clr-link);
+  text-decoration: underline;
+}
+.external-link {
+  fill: var(--clr-link);
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+}

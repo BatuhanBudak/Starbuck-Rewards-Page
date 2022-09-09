@@ -17,6 +17,7 @@
   display: block;
   margin-inline: calc(-1 * var(--size-540));
   padding: 12px var(--size-540);
+  margin-bottom: var(--size-540);
   position: relative;
   z-index: 0;
   overflow: hidden;
@@ -31,6 +32,11 @@
   position: relative;
   transition: border 0.2s linear 0.2s;
 }
+
+.stars__form__input-base__child-wrapper:focus-within {
+  box-shadow: 0 0 0 2px var(--clr-accent);
+}
+
 .stars__input {
   appearance: none;
   background-color: transparent;
@@ -66,21 +72,26 @@
   cursor: text;
   opacity: 1;
 }
-/* .stars__input:placeholder-shown ~ .stars__form__label {
-  top: 50%;
-  transform: translateY(-50%);
-} */
+
+.stars__input:not(:placeholder-shown) ~ .stars__form__label {
+  animation-name: label--active;
+  border-radius: 4px;
+  color: rgb(0 0 0 / 58%);
+}
 
 .stars__form__label.input-active {
   animation-name: label--active;
   border-radius: 4px;
   color: rgb(0 0 0 / 58%);
 }
+.stars__input:focus {
+  outline: none;
+}
 
 .stars__input:focus ~ .stars__form__label {
-  /* border-radius: 4px;
-  color: rgb(0 0 0 / 58%); */
+  color: var(--clr-accent);
 }
+
 @keyframes label--active {
   0% {
     opacity: 1;
@@ -104,10 +115,41 @@
   }
 }
 
+.ripple {
+  animation-duration: 1.2s;
+  animation-name: ripple;
+  animation-timing-function: ease;
+  transform-origin: center;
+  position: absolute;
+  border-radius: 50%;
+  height: 30px;
+  opacity: 0;
+  pointer-events: none;
+  width: 30px;
+  background-color: var(--clr-bg-greenlight);
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(50);
+  }
+}
+
 .green {
   color: var(--clr-accent);
 }
 
 .stars__form__button {
   background-color: transparent;
+  margin-left: auto;
+  display: block;
+  padding: var(--size-200) var(--size-450);
 }

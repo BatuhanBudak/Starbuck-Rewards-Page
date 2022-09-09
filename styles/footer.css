@@ -1,0 +1,93 @@
+.footer {
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1), 0 -2px 2px rgba(0, 0, 0, 0.06),
+    0 0 2px rgba(0, 0, 0, 0.07);
+  margin-top: var(--size-880);
+  padding-block: var(--size-725);
+}
+
+.footer__nav__main__container {
+  display: block;
+}
+.footer__nav__main__mobile {
+  display: block;
+}
+
+.footer__nav__main__mobile__toggler__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--size-350);
+  margin-bottom: var(--size-350);
+  cursor: pointer;
+}
+.footer__nav__main__mobile__toggler__header {
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-footer-heading);
+  color: rgba(0, 0, 0, 0.87);
+}
+.footer__nav__main__mobile__toggler__button {
+  min-width: 44px;
+  min-height: 44px;
+  position: relative;
+  transition: all 0.2s ease-out;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  color: rgba(0, 0, 0, 0.87);
+}
+.caret-down {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  fill: currentColor;
+  overflow: visible;
+}
+.caret-down-hover {
+  fill: transparent;
+  opacity: 0.1;
+  transform: scale(0.4);
+  transform-origin: center;
+  transition: all 0.2s ease-out;
+}
+@media (hover: hover) and (pointer: fine) {
+  .footer__nav__main__mobile__toggler__button:active .caret-down-hover,
+  .footer__nav__main__mobile__toggler__button:hover .caret-down-hover {
+    fill: currentColor;
+    transform: scale(1);
+  }
+}
+
+.footer__nav__main__mobile__expander__container {
+  height: 0;
+  position: relative;
+  transition: height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+
+.footer__nav__main__mobile__expander {
+  display: none;
+  position: absolute;
+  inset: 0;
+}
+.footer__nav__main__mobile__expander__list {
+  display: inline-block;
+}
+
+.footer__nav__main__mobile__expander__list__item__link {
+  display: block;
+  margin-bottom: var(--size-350);
+  padding-block: var(--size-350);
+  color: rgba(0, 0, 0, 0.58);
+  text-decoration: none;
+}
+
+.footer__nav__main__desktop {
+  display: none;
+}

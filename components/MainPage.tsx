@@ -6,6 +6,8 @@ import Intro from "./Intro";
 import TabsSection from "./TabsSection";
 import Payment from "./Payment";
 import Stars from "./Stars";
+import Qustions from "./Qustions";
+import Terms from "./Terms";
 
 export default function Main() {
   return (
@@ -17,6 +19,8 @@ export default function Main() {
       <Extras />
       <Payment />
       <Stars />
+      <Qustions />
+      <Terms />
     </main>
   );
 }

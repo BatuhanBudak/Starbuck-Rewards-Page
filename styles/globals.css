@@ -29,10 +29,11 @@ html:focus-within {
   --clr-link: hsl(155, 100%, 33%);
 
   --clr-bg-light-green: hsl(163, 33%, 96%);
-  --clr-bg-green: hsl(160, 32%, 87%);
+  --clr-bg-green: hsl(160, 31%, 87%);
   --clr-bg-dark-green: hsl(164, 31%, 17%);
   --clr-bg-cream: hsl(43, 21%, 94%);
   --clr-bg-gray: rgb(249, 249, 249);
+  --clr-bg-greenlight: hsl(160, 32%, 87%);
 
   --ff-primary: "Noto Sans", sans-serif;
 
@@ -155,11 +156,6 @@ html:focus-within {
 
 ul {
   list-style: none;
-}
-
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
 }
 
 /* A elements that don't have a class get default styles */

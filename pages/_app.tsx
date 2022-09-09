@@ -7,6 +7,9 @@ import "../styles/tabs.css";
 import "../styles/extras.css";
 import "../styles/payment.css";
 import "../styles/stars.css";
+import "../styles/questions.css";
+import "../styles/terms.css";
+import "../styles/footer.css";
 
 import type { AppProps } from "next/app";
 
