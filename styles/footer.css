@@ -48,6 +48,7 @@
   transform: translate(-50%, -50%);
   fill: currentColor;
   overflow: visible;
+  transform-origin: center;
 }
 .caret-down-hover {
   fill: transparent;
@@ -64,24 +65,17 @@
   }
 }
 
-.footer__nav__main__mobile__expander__container {
-  height: 0;
-  position: relative;
-  transition: height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  overflow: hidden;
+.expander {
+  transform-origin: top center;
 }
 
-.footer__nav__main__mobile__expander {
-  display: none;
-  position: absolute;
-  inset: 0;
-}
 .footer__nav__main__mobile__expander__list {
   display: inline-block;
 }
 
 .footer__nav__main__mobile__expander__list__item__link {
   display: block;
+  font-size: 14px;
   margin-bottom: var(--size-350);
   padding-block: var(--size-350);
   color: rgba(0, 0, 0, 0.58);
@@ -90,4 +84,74 @@
 
 .footer__nav__main__desktop {
   display: none;
+}
+
+.seperator {
+  padding-block: var(--size-725);
+  border: 0;
+  margin: 0;
+}
+.seperator:before {
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  content: "";
+  display: block;
+}
+.footer__icon__list {
+  display: flex;
+  margin-left: -5px;
+}
+.footer__icon__list__item__link {
+  min-width: 44px;
+  min-height: 44px;
+  position: relative;
+  display: inline-block;
+  transition: all 0.2s ease-out;
+  color: currentColor;
+}
+
+.footer__icon__list__item__icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  fill: currentColor;
+  overflow: visible;
+  transform-origin: center;
+}
+.footer__last-links-list {
+  display: inline-block;
+  margin-top: 1.6rem;
+}
+.footer__last-links-list__item {
+  display: list-item;
+  align-items: center;
+}
+.footer__last-links-list__item__link {
+  display: block;
+  padding-block: var(--size-350);
+  margin-bottom: 0.4rem;
+  color: var(--clr-black);
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 14px;
+}
+.footer__last-links-list__item__link__seperator {
+  display: none;
+  padding-inline: var(--size-350);
+  color: rgba(0, 0, 0, 0.58);
+}
+button.footer__last-links-list__item__link {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+}
+.footer__last-text {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.58);
+  padding-block: var(--size-540);
 }

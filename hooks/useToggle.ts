@@ -6,8 +6,6 @@ export default function useToggle(initialValue = false) {
     function toggleState(){
         setToggled(!toggled);
     }
-    function closeState(){
-      setToggled(false);
-    }
-    return [toggled, toggleState, closeState];
+    
+    return [toggled, toggleState];
 }

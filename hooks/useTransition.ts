@@ -8,7 +8,7 @@ export default function useTransition(initial = false) {
        setTimeout(() => {
             setIsTransitioning(false);
 
-        },250)
+        },300)
     }
    
 
