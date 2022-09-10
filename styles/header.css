@@ -310,7 +310,7 @@ header {
   .nav__menu__list__item {
     margin-left: var(--size-640);
     position: relative;
-    padding-block: clamp(var(--size-600), var(--size-650), var(--size-700));
+    padding-block: var(--size-725);
     transition: color 0.4s ease-in-out;
   }
   .active-link {
@@ -360,6 +360,11 @@ header {
   .nav__menu__auth__link.button.button--white:focus {
   background-color: var(--clr-black-700);
   border-color: var(--clr-black-700);
+}
+@media screen and (min-width: 64em) {
+  .nav__menu__list__item {
+    padding-block: var(--size-800);
+  }
 }
 
 @media (min-width: 107em) {

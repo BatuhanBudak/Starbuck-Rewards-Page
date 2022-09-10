@@ -75,3 +75,20 @@
     justify-self: center;
   }
 }
+@media screen and (min-width: 64em) {
+  .payment__cost__container {
+    flex-basis: 16%;
+  }
+  .payment__item__container {
+    flex-basis: 41%;
+  }
+}
+@media screen and (min-width: 80em) {
+  .payment__cost__container {
+    flex-basis: 16%;
+  }
+  .payment__item__container {
+    flex-basis: 33%;
+    margin-inline: var(--size-540);
+  }
+}

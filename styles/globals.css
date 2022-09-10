@@ -84,7 +84,7 @@ html:focus-within {
   --fs-cost-heading: clamp(var(--fs-218), 5vw, var(--fs-290));
   --fs-hero-body: clamp(var(--fs-225), 1.3rem, var(--fs-250));
   --fs-button: var(--fs-200);
-  --fs-button-link: clamp(var(--fs-200), 3vw, var(--fs-240));
+  --fs-button-link: clamp(var(--fs-200), 3vw, var(--fs-230));
   --fs-text-link: clamp(var(--fs-200), 1.125rem, var(--fs-225));
   --fs-nav-link-mobile: var(--fs-240);
   --fs-nav-link-desktop: clamp(var(--fs-230), 1.35rem, var(--fs-240));
