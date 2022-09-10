@@ -42,3 +42,24 @@
   text-decoration: underline;
   color: var(--clr-link);
 }
+@media screen and (min-width: 48em) {
+  .intro__list__container {
+    width: 33%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    display: inline-flex;
+    text-align: center;
+  }
+
+  .intro__list__container:nth-child(3) {
+    margin-inline: var(--size-100);
+  }
+
+  .intro__list__number {
+    max-width: 128px;
+    flex-shrink: 0;
+    align-self: unset;
+    margin-bottom: var(--size-550);
+  }
+}

@@ -32,13 +32,9 @@ export default function TabsSection() {
           >
             <Tab
               aria-controls="tabpanel-0"
-              // aria-selected={firstImgActive}
+              aria-selected={firstImgActive}
               id="tab-0"
               role="tab"
-              // onClick={() => {
-              //   closeAllImgs();
-              //   setFirstImgActive(true);
-              // }}
             >
               <span className="tabs__button__price">
                 25

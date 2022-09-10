@@ -94,7 +94,6 @@
 .tabs__tabContent__img__padding {
   width: 100%;
   padding-bottom: 56.14%;
-  aspect-ratio: 16/9;
 }
 .absoluteSpread {
   inset: 0;
@@ -108,7 +107,31 @@
   padding-inline: var(--padding-inline);
 }
 .tabs__tabContent__details__header {
-  font-size: clamp(var(--fs-225), var(--fs-250), var(--fs-275));
+  font-size: clamp(var(--fs-225), 6vw, var(--fs-290));
   font-weight: var(--fw-semi-bold);
   margin-bottom: var(--size-550);
+}
+@media screen and (min-width: 48em) {
+  .tabs__tab-panels-container {
+    padding-bottom: var(--size-540);
+  }
+
+  .tabs__tabContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tabs__tabContent__wrapper {
+    flex-basis: 100%;
+    padding-block: 0;
+    padding-top: var(--size-540);
+    max-width: 375px;
+    margin-right: var(--size-800);
+  }
+  .tabs__tabContent__details {
+    text-align: left;
+    padding-top: var(--size-540);
+    padding-inline: var(--size-450);
+    max-width: 375px;
+  }
 }

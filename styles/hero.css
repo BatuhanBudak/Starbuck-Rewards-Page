@@ -1,16 +1,23 @@
 .hero__mobile-container {
-  background-color: var(--clr-bg-light-green);
+  background-color: var(--clr-bg-green);
   background-image: url("../public/hero-mobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom right;
-  min-height: 60vh;
+  min-height: 135vw;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
+
+@media screen and (min-width: 48em) {
+  .hero__mobile-container {
+    display: none;
+  }
+}
+
 .hero__mobile__text-container {
-  padding-inline: var(--padding--inline);
+  padding-inline: var(--padding-inline);
   padding-block: var(--padding-block);
   margin: 0 auto;
   max-width: 400px;
@@ -48,4 +55,72 @@
 .hero__mobile__link--last--link-container .hero__mobile__link {
   color: var(--clr-black);
   text-decoration: underline;
+}
+
+.hero__desktop {
+  display: none;
+}
+@media screen and (min-width: 48em) {
+  .hero__desktop {
+    display: block;
+  }
+
+  .hero__desktop__bground {
+    background-image: url("../public/xl-hero-desktop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    background-color: var(--clr-bg-green);
+  }
+  .hero__desktop__container {
+    display: flex;
+  }
+  .hero__desktop__embed__height {
+    padding-bottom: 56.25%;
+  }
+  .hero__desktop__text-container {
+    padding-inline: var(--padding-inline);
+    padding-block: var(--padding-block);
+    margin: initial;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 400px;
+    min-width: 48%;
+  }
+
+  .hero__desktop__header {
+    font-size: var(--fs-hero-heading);
+    font-weight: var(--fw-semi-bold);
+    color: var(--clr-black);
+    line-height: 1.29;
+    text-align: left;
+    margin-bottom: var(--size-500);
+  }
+  .hero__desktop__excerpt {
+    font-size: var(--fs-hero-body);
+    font-weight: var(--fw-regular);
+    color: var(--clr-black);
+    margin-bottom: var(--size-650);
+  }
+  .hero__desktop__links-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding-top: var(--size-400);
+  }
+  .hero__desktop__link {
+    font-size: var(--fs-hero-body);
+  }
+  .hero__desktop__link--last--link-container {
+    font-size: var(--fs-hero-body);
+    margin-top: var(--size-500);
+    display: inline-block;
+  }
+  .hero__desktop__link--last--link-container .hero__desktop__link {
+    color: var(--clr-black);
+    text-decoration: underline;
+  }
 }

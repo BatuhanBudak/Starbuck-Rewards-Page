@@ -155,3 +155,53 @@ button.footer__last-links-list__item__link {
   color: rgba(0, 0, 0, 0.58);
   padding-block: var(--size-540);
 }
+@media screen and (min-width: 64em) {
+  .footer__nav__main__container {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) 1fr;
+  }
+
+  .footer__nav__main__mobile {
+    display: none;
+  }
+
+  .footer__nav__main__desktop {
+    display: block;
+    justify-self: start;
+    grid-column: span 1;
+  }
+  .footer__nav__main__desktop__header {
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-footer-heading);
+    color: rgba(0, 0, 0, 0.87);
+    margin-bottom: var(--size-540);
+  }
+  .footer__nav__main__desktop__list > li:not(:last-child) {
+    margin-bottom: var(--size-300);
+  }
+
+  .footer__nav__main__desktop__list__item__link {
+    color: rgba(0, 0, 0, 0.58);
+  }
+  .footer__last-links-list {
+    display: inline-block;
+    margin-top: 1.6rem;
+    gap: var(--size-300);
+    display: flex;
+  }
+  .footer__last-links-list__item {
+    display: list-item;
+    align-items: center;
+  }
+  .footer__last-links-list__item__link {
+    display: inline-block;
+
+    font-size: 16px;
+  }
+  .footer__last-links-list__item__link__seperator {
+    display: inline-block;
+  }
+  .footer__last-text {
+    font-size: 14px;
+  }
+}

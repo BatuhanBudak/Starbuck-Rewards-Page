@@ -13,3 +13,9 @@
   width: 24px;
   height: 24px;
 }
+@media screen and (min-width: 48em) {
+  .quesitons__wrapper {
+    max-width: 50%;
+    margin-inline: auto;
+  }
+}

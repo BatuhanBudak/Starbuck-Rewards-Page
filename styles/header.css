@@ -280,7 +280,7 @@ header {
   }
 }
 @media screen and (min-width: 55em) {
-  .header {
+  header {
     height: unset;
   }
   .nav {
@@ -370,10 +370,3 @@ header {
     transform: translateY(-50%);
   }
 }
-/* @media screen and (min-width: 95em) {
-  
-  .nav {
-    max-width: var(--max-width);
-    padding-inline: 0;
-  }
-} */

@@ -43,3 +43,17 @@ svg.external-link {
   width: 24px;
   height: 24px;
 }
+@media screen and (min-width: 48em) {
+  .terms__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--fs-350);
+  }
+  .terms__body {
+    grid-column: span 2;
+  }
+  .terms__body,
+  .terms__grid__item__heading {
+    font-size: var(--fs-225);
+  }
+}

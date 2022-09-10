@@ -59,3 +59,19 @@
   color: var(--clr-accent);
   text-decoration: underline;
 }
+@media screen and (min-width: 48em) {
+  .payment__items {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .payment__cost__container {
+    width: 100%;
+  }
+  .payment__item__container {
+    flex-basis: 50%;
+  }
+  .payment__title__container {
+    width: 70%;
+    justify-self: center;
+  }
+}

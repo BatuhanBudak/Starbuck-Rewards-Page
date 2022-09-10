@@ -65,7 +65,7 @@
   z-index: 2;
   padding-inline: 0.4rem;
   transition: color 1ms ease-in-out 149ms;
-  font-size: var(--fs-230);
+  font-size: var(--fs-desc-heading);
   color: var(--clr-black);
   background-color: var(--clr-white);
   user-select: none;
@@ -103,7 +103,6 @@
   40% {
     font-size: var(--fs-230);
     opacity: 1;
-    top: 50%;
   }
   50% {
     font-size: var(--fs-200);
@@ -152,4 +151,10 @@
   margin-left: auto;
   display: block;
   padding: var(--size-200) var(--size-450);
+}
+@media screen and (min-width: 48em) {
+  .stars__wrapper {
+    max-width: 50%;
+    margin-inline: auto;
+  }
 }
