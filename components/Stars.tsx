@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 
 export default function Stars() {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("");
   const [inputFocused, setInputFocused] = useState(false);
   const [showAnimationSpan, setShowAnimationSpan] = useState(true);
 
-  function handleChange(e) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setValue(e.target.value);
   }
-  function handleInputFocus(e) {
-    console.log(e);
-
+  function handleInputFocus() {
     setShowAnimationSpan(true);
     setTimeout(() => {
       setShowAnimationSpan(false);
@@ -42,7 +40,7 @@ export default function Stars() {
                       setInputFocused(true);
                     }}
                     onBlur={() => setInputFocused(false)}
-                    onClick={(e) => handleInputFocus(e)}
+                    onClick={() => handleInputFocus()}
                   />
                   <label
                     htmlFor="stars"

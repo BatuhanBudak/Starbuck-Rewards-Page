@@ -1,6 +1,14 @@
 import React from "react";
 import { Startbucks } from "../Icon";
 
+type Props = {
+  toggleFirstDrawer: () => void;
+  toggleDrawerTransition: () => void;
+  firstDrawerOpen: boolean;
+  toggleSecondDrawerTransition: () => void;
+  toggleSecondDrawer: () => void;
+  secondDrawerOpen: boolean;
+};
 export default function NavFirst({
   toggleFirstDrawer,
   toggleDrawerTransition,
@@ -8,7 +16,7 @@ export default function NavFirst({
   toggleSecondDrawerTransition,
   toggleSecondDrawer,
   secondDrawerOpen,
-}) {
+}: Props) {
   return (
     <div className="nav__first">
       <a className="nav__first__icon" href="">

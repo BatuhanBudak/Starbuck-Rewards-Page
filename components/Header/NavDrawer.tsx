@@ -1,13 +1,22 @@
 import { MapMarker } from "../Icon";
 
+type Props = {
+  toggleSecondDrawerTransition: () => void;
+  toggleSecondDrawer: () => void;
+  firstDrawerOpen: boolean;
+  secondDrawerOpen: boolean;
+  drawerTransitioning: boolean;
+  secondDrawerTransitioning: boolean;
+};
+
 export default function NavDrawer({
   firstDrawerOpen,
-  drawerTransitioning,
   secondDrawerOpen,
+  drawerTransitioning,
   toggleSecondDrawer,
   secondDrawerTransitioning,
   toggleSecondDrawerTransition,
-}) {
+}: Props) {
   return (
     <div>
       <div

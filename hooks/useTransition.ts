@@ -12,6 +12,6 @@ export default function useTransition(initial = false) {
     }
    
 
-    return [isTransitioning, toggleTransition];
+    return [isTransitioning, toggleTransition] as const;
  
 }
